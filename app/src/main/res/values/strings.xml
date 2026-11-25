@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MoodLog</string>
+    <string name="header_subtitle">Daily Mood &amp; Expense Journal</string>
+    <string name="summary_today_spent_label">Spent Today</string>
+    <string name="summary_today_count_label">Today\'s Check-ins</string>
+    <string name="summary_total_entries_label">Total Saved</string>
+    <string name="mood_picker_title">How are you feeling right now?</string>
+    <string name="note_label">Short Note (Optional)</string>
+    <string name="note_placeholder">e.g., Morning coffee</string>
+    <string name="expense_label">Expense Amount in ₹ (Optional)</string>
+    <string name="expense_placeholder">0.00</string>
+    <string name="rupee_symbol">₹</string>
+    <string name="add_entry_button">Add Entry</string>
+    <string name="error_negative_amount">Expense amount cannot be negative.</string>
+    <string name="error_invalid_amount">Please enter a valid number for the expense.</string>
+    <string name="weekly_insight_title">Gemini Weekly Insight</string>
+    <string name="weekly_insight_subtitle">Spot patterns between your mood and spending</string>
+    <string name="get_weekly_insight_button">Get Weekly Insight</string>
+    <string name="weekly_insight_loading">Analyzing your recent mood and spending…</string>
+    <string name="weekly_insight_empty_error">Log at least one entry first so Gemini can summarize your week.</string>
+    <string name="history_section_title">Recent Entries</string>
+    <string name="empty_history_title">Your journal is ready</string>
+    <string name="empty_history_body">Pick a mood above, add an optional note or ₹ expense, and tap Add Entry to save your first check-in.</string>
+    <string name="cd_delete_entry">Delete entry</string>
+    <string name="cd_empty_illustration">Cozy journal and teacup illustration</string>
+    <string name="snackbar_entry_saved">Entry saved locally</string>
+    <string name="snackbar_entry_deleted">Entry deleted</string>
+    <string name="snackbar_undo">Undo</string>
+    <string name="default_note">Quick check-in</string>
+    <string name="no_spend_label">No spend</string>
+</resources>

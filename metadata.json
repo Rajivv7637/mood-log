@@ -1,0 +1,6 @@
+{
+  "name": "MoodLog",
+  "description": "A Mood & Expense Log Android app with local Room database persistence and Gemini AI weekly insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
