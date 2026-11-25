@@ -14,5 +14,16 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Secrets and API keys (never commit actual keys; keep .env.example as template)
 .env
+.env.*
+!.env.example
+*.env.local
+secrets.properties
+apikey.properties
+
+# Signing keystores
 debug.keystore
+*.keystore
+*.jks
