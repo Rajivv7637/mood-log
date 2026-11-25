@@ -11,20 +11,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+      - name: Build Web Assets (if package.json exists)
+        run: |
+          if [ -f "package.json" ]; then
+            npm install
+            npm run build
+          else
+            mkdir -p www
+            cp -r *.html *.css *.js assets icons manifest.json www/ 2>/dev/null || true
+          fi
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
+      - name: Wrap with Capacitor & Build APK
+        run: |
+          npm init -y
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+          WEB_DIR="www"
+          [ -d "dist" ] && WEB_DIR="dist"
+          [ -d "build" ] && WEB_DIR="build"
+          npx cap init "Mood Log" "com.rajiv.moodlog" --web-dir="$WEB_DIR"
+          npx cap add android
+          npx cap sync android
+          cd android && chmod +x gradlew && ./gradlew assembleDebug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: mood-log-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: android/app/build/outputs/apk/debug/*.apk
